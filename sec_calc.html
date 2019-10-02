@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Seconds calculator</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <input type="number" name="seconds" id="seconds">
+    <button type="" onclick="calci()">Submit</button>
+    <p id="output"></p>
+    <script>
+    function calci() {
+    	var h;
+    	var d;
+        input = document.getElementById("seconds").value;
+        var weeks = Math.floor(input / 60 / 60 / 24 / 7);
+        var d = Math.floor(input / 60 / 60 / 24 % 7);
+        var h = Math.floor(input / 60 / 60 % 24);
+        var mins = Math.floor(input / 60 % 60);
+        var secs = Math.floor(input % 60);
+        console.log(input, weeks, d, h, mins, secs)
+        document.getElementById("output").innerHTML = +weeks + " Weeks " + d + " Days " + h + " Hours " + mins + " Minutes " + secs + " Seconds ";
+
+    }
+    </script>
+</body>
+
+</html>
